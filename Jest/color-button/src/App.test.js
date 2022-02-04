@@ -5,23 +5,25 @@ import {replaceCamelWithSpaces} from './App.js'
 
 test('button has correct initial color', () => {
   render(<App />);
-  const colorButton = screen.getByRole('button', { name: 'Change to blue' });
-  expect(colorButton).toHaveStyle({backgroundColor: 'red'})
+  const colorButton = screen.getByRole('button', { name: 'Change to Midnight Blue' });
+  expect(colorButton).toHaveStyle({backgroundColor: 'MediumVioletRed'})
 });
 
 test('button turns blue when clicked', () => {
   render(<App />)
-  const colorButton = screen.getByRole('button', { name: 'Change to blue' })
+  const colorButton = screen.getByRole('button', {
+    name: 'Change to Midnight Blue'
+  })
   fireEvent.click(colorButton)
-  expect(colorButton).toHaveStyle({ backgroundColor: 'blue' })
-  expect(colorButton.textContent).toBe('Change to red')
+  expect(colorButton).toHaveStyle({ backgroundColor: 'MidnightBlue' })
+  expect(colorButton.textContent).toBe('Change to Medium Violet Red')
 });
 
 test('initial conditions', () => {
   render(<App />)
 
   //button starts out enabled
-  const colorButton = screen.getByRole('button', { name: 'Change to blue' })
+  const colorButton = screen.getByRole('button', { name: 'Change to Midnight Blue' })
   expect(colorButton).toBeEnabled();
 
   //'checkbox is unchecked'
@@ -34,7 +36,7 @@ test('initial conditions', () => {
 test('button is disabled when checkbox is checked, button enabled when checkbox unchecked', () => {
   render( <App /> )
   const colorButton = screen.getByRole('button', {
-    name: 'Change to blue'
+    name: 'Change to Midnight Blue'
   });
   const checkBox = screen.getByRole('checkbox', {name: 'Disable Button'});
 
@@ -49,7 +51,7 @@ test('button is disabled when checkbox is checked, button enabled when checkbox 
 test('checkbox will disable button and button will be gray when disabled', () => {
   render(<App />)
   
-  const colorButton = screen.getByRole('button', { name: 'Change to blue' })
+  const colorButton = screen.getByRole('button', { name: 'Change to Midnight Blue' })
   const checkBox = screen.getByRole('checkbox', { name: 'Disable Button' })
   
   fireEvent.click(checkBox)
