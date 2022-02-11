@@ -1,5 +1,5 @@
 const request = require("supertest");
-const app = require("./server.js");
+const app = require("./mocks/server.js");
 
 describe("test server", () => {
   beforeEach(async () => {
