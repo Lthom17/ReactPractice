@@ -1,11 +1,11 @@
-
+import SummaryForm from './components/summary/SummaryForm'
 import './App.css';
 
 
 function App() {
   return (
     <div className="App">
-     
+     <SummaryForm/>
     </div>
   );
 }
