@@ -1,11 +1,11 @@
 import { render, screen } from '@testing-library/react'
 
-import Options from '../Options'
+import Options from './Options'
 
-test('Displays image for each scoop from the server', () => {
+test('Displays image for each scoop from the server', async () => {
     render(<Options optionType='scoops' />);
 
-    const scoopImages = screen.getAllByRole('img', { name: /scoop$/i });
+    const scoopImages = await screen.findAllByRole('img', { name: /scoop$/i });
     expect(scoopImages).toHaveLength(2);
 
     const altText = scoopImages.map((element) => element.altText);

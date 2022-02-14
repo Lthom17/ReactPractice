@@ -1,5 +1,5 @@
 
-import Col from 'react-biitstrap/Col';
+import Col from 'react-bootstrap/Col';
 
 function ScoopOptions({ name, imagePath }) {
     return (

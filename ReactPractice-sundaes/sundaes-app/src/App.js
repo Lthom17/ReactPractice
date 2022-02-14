@@ -1,4 +1,4 @@
-import SummaryForm from './components/summary/SummaryForm'
+import SummaryForm from './pages/summary/SummaryForm'
 import './App.css';
 
 
